@@ -1,0 +1,33 @@
+import React from 'react'
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
+import Brand from '../components/Brand'
+
+export default function NavigationBar(){
+    return(
+        <Navbar bg="dark" variant="dark" expand="lg" 
+        className='fs-4 flex-grow-1 px-5'>
+            <Navbar.Brand href="/">
+                <Brand/>
+            </Navbar.Brand>
+            <Navbar.Toggle aria-controls="basic-navbar-nav"/>
+            <Navbar.Collapse id="basic-navbar-nav" className='flex-column align-items-end'>
+                <Nav>
+                    <Nav.Link href="/" className='mx-4'>
+                        Home
+                    </Nav.Link>
+                    <Nav.Link href="/statistics" className='mx-4'>
+                        Statistics
+                    </Nav.Link>
+                    <Nav.Link href="/login" className='mx-4'>
+                        Log In
+                    </Nav.Link>
+                    <Nav.Link href="/signup" className='mx-4'>
+                        Sign Up
+                    </Nav.Link>
+                </Nav>
+            </Navbar.Collapse>
+        </Navbar>
+    )
+}
