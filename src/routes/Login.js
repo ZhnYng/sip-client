@@ -23,7 +23,7 @@ export default function Login() {
 
   function handleSubmit(e){
     e.preventDefault();
-    axios.post('http://localhost:5000/login/submit', formData)
+    axios.post('https://sipappdev.herokuapp.com/login/submit', formData)
       .then(res => {
         if(res.data === "Successful"){
           window.location.href = '/submitted';
@@ -38,7 +38,7 @@ export default function Login() {
     <>
     <NavigationBar/>
     <div className="d-flex align-items-center justify-content-center" style={{height: '80vh'}}>
-      <Form className="col-xl-4 col-lg-5 col-8 col-md-6 p-5" action="http://localhost:5000/login/submit" method="POST"
+      <Form className="col-xl-4 col-lg-5 col-8 col-md-6 p-5" action="https://sipappdev.herokuapp.com/login/submit" method="POST"
       style={{backgroundColor: '#eb9347', borderRadius: '25px'}}>
         <h1 className="text-center text-decoration-underline mb-4">Login</h1>
         <Brand/>
