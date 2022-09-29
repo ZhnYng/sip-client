@@ -24,7 +24,7 @@ export default function Signup() {
 
   function handleSubmit(e){
     e.preventDefault();
-    axios.post('https://sipappdev.herokuapp.com/signup/submit', formData)
+    axios.post('/signup/submit', formData)
       .then(res => {
         if(res.data === "Successful"){
           window.location.href = '/submitted';

@@ -14,7 +14,7 @@ export default function NavigationBar(){
             <Navbar.Toggle aria-controls="basic-navbar-nav"/>
             <Navbar.Collapse id="basic-navbar-nav" className='flex-column align-items-end'>
                 <Nav>
-                    <Nav.Link href="/" className='mx-4'>
+                    <Nav.Link href="/home" className='mx-4'>
                         Home
                     </Nav.Link>
                     <Nav.Link href="/statistics" className='mx-4'>

@@ -6,7 +6,7 @@ import Brand from "../components/Brand";
 import axios from "axios";
 
 export default function Login() {
-  const TEST_VALUE = "test"
+  const TEST_VALUE = ""
   const [formData, setFormData] = React.useState({
     username: TEST_VALUE,
     password: TEST_VALUE
@@ -23,10 +23,11 @@ export default function Login() {
 
   function handleSubmit(e){
     e.preventDefault();
-    axios.post('https://sipappdev.herokuapp.com/login/submit', formData)
+    axios.post('/login/submit', formData)
       .then(res => {
         if(res.data === "Successful"){
-          window.location.href = '/submitted';
+          localStorage.setItem('user', formData.username)
+          window.location.href = '/home';
         }else{
           console.log("Login failed");
         }
@@ -38,7 +39,7 @@ export default function Login() {
     <>
     <NavigationBar/>
     <div className="d-flex align-items-center justify-content-center" style={{height: '80vh'}}>
-      <Form className="col-xl-4 col-lg-5 col-8 col-md-6 p-5" action="https://sipappdev.herokuapp.com/login/submit" method="POST"
+      <Form className="col-xl-4 col-lg-5 col-8 col-md-6 p-5"
       style={{backgroundColor: '#eb9347', borderRadius: '25px'}}>
         <h1 className="text-center text-decoration-underline mb-4">Login</h1>
         <Brand/>

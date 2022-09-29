@@ -1,0 +1,40 @@
+#defaultAnimation > #submitButton{
+    transition: width 1s, height 1s;
+    transition-delay: 0.2s;
+}
+#submitButtonTick{
+    transition: width 1s height 1s;
+    width: 1px;
+    height: 1px;
+}
+#submitButtonCross{
+    width: 1px;
+    height: 1px;
+    transition: width 1s height 1s;
+}
+
+#successAnimation > #submitButton{
+    width: 66%;
+    transition: width 1s;
+}
+#successAnimation > #submitButtonTick{
+    color: #198754;
+    width: 70px;
+    height: 70px;
+    transition: width 1s, height 1s;
+    transition-delay: 0.2s;
+}
+
+#failedAnimation > #submitButton{
+    width: 66%;
+    background-color: #FF5252;
+    border: solid 1px #FF5252;
+    transition: width 1s;
+}
+#failedAnimation > #submitButtonCross{
+    color: #FF5252;
+    width: 70px;
+    height: 70px;
+    transition: width 1s, height 1s;
+    transition-delay: 0.2s;
+}

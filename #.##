@@ -1,0 +1,11 @@
++ react@18.2.0
++ moment@2.29.4
++ react-dom@18.2.0
++ react-dates@21.8.0
+updated 4 packages and audited 1504 packages in 20.913s
+
+211 packages are looking for funding
+  run `npm fund` for details
+
+found 1 high severity vulnerability
+  run `npm audit fix` to fix them, or `npm audit` for details
