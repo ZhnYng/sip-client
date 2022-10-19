@@ -48,15 +48,17 @@ export default function Statistics(props){
       }
     }
   });
+  console.log(props.update)
 
   // Remove first render of chart because it is using default values
   React.useEffect(() => {
     myChart.destroy();
-  }, [])
+    console.log(props.update)
+  }, [props.update])
 
   return (
     <div className="col-11 shadow rounded px-5 py-4 mt-4">
-      <canvas id="myChart" style={{width: '100%', minWidth:'300px'}}></canvas>
+      <canvas id="myChart" style={{width: '100%', minWidth:'50px'}}></canvas>
     </div>
   )
 }

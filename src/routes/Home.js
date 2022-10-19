@@ -11,6 +11,7 @@ export default function Home(){
 
   const [user, setUser] = React.useState("");
   const [userInfo, setUserInfo] = React.useState();
+  const [update, setUpdate] = React.useState(false);
 
   // Function to handle user info
   function handleUserInfo(userData){
@@ -44,16 +45,16 @@ export default function Home(){
     <div className="d-flex justify-content-center">
       <Header user={user}/>
     </div>
-    <div className="container-fluid row justify-content-center my-5">
-      <div className="col-5 d-flex flex-column align-items-center">
+    <div className="container-fluid row justify-content-center m-0 align-items-center my-5">
+      <div className="col-12 col-lg-5 d-flex flex-column align-items-center">
         {userInfo && <Goal user={user} userInfo={userInfo.goals}/>}
-        {userInfo && <Statistics user={user} userInfo={userInfo.drinksToday}/>}
+        {userInfo && <Statistics user={user} userInfo={userInfo.drinksToday} update={update}/>}
       </div>
-      <div className="col-3">
+      <div className="col-12 col-lg-3">
         {userInfo && <Calendar user={user} userInfo={userInfo.drinksToday}/>}
       </div>
-      <div className="col-3">
-        <Update user={user}/>
+      <div className="col-12 col-lg-3">
+        <Update user={user} update={setUpdate}/>
       </div>
     </div>
     </>

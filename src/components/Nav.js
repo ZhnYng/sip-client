@@ -7,8 +7,8 @@ import Brand from '../components/Brand'
 export default function NavigationBar(){
     return(
         <Navbar bg="dark" variant="dark" expand="lg" 
-        className='fs-4 flex-grow-1 px-5'>
-            <Navbar.Brand href="/">
+        className='fs-4 flex-grow-1 px-lg-5 px-3'>
+            <Navbar.Brand href="/" className='m-0'>
                 <Brand/>
             </Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav"/>
