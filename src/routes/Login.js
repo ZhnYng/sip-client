@@ -2,7 +2,6 @@ import React from "react";
 import NavigationBar from "../components/Nav";
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-import Brand from "../components/Brand";
 import axios from "axios";
 
 export default function Login() {
@@ -25,11 +24,13 @@ export default function Login() {
     e.preventDefault();
     axios.post('/login/submit', formData)
       .then(res => {
-        if(res.data === "Successful"){
-          localStorage.setItem('user', formData.username)
-          window.location.href = '/home';
-        }else{
+        if(Object.keys(res.data) === "error msg"){
           console.log("Login failed");
+        }else if(Object.values(res.data) === "password invalid"){
+          console.log("password invalid");
+        }else{
+          localStorage.setItem('userId', res.data.userId)
+          window.location.href = '/home';
         }
       })
       .catch(err => console.log(err))
@@ -38,11 +39,10 @@ export default function Login() {
   return (
     <>
     <NavigationBar/>
-    <div className="d-flex align-items-center justify-content-center" style={{height: '80vh'}}>
-      <Form className="col-xl-4 col-lg-5 col-8 col-md-6 p-5"
+    <div className="d-flex mt-5 justify-content-center">
+      <Form className="col-xl-4 col-lg-5 col-10 col-md-6 p-4"
       style={{backgroundColor: '#eb9347', borderRadius: '25px'}}>
-        <h1 className="text-center text-decoration-underline mb-4">Login</h1>
-        <Brand/>
+        <h1 className="text-center fw-bold mb-0 display-1">Log in</h1>
         <Form.Group className="my-3" controlId="formBasicUsername">
           <Form.Label className="fs-3">Username</Form.Label>
           <Form.Control name="username" type="text" placeholder="Username" 

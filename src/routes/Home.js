@@ -24,10 +24,10 @@ export default function Home(){
   }
 
   React.useEffect(() => {
-    const loggedInUser = localStorage.getItem("user");
+    const loggedInUser = localStorage.getItem("userId");
     if (loggedInUser) {
       setUser(() => {return loggedInUser})
-      axios.post('/home', {user: loggedInUser})
+      axios.get('/', { params: { userId: loggedInUser } })
         .then(res => {
           setUserInfo(handleUserInfo(res.data))
         })

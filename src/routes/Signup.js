@@ -2,7 +2,6 @@ import React from "react";
 import NavigationBar from "../components/Nav";
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-import Brand from "../components/Brand";
 import axios from "axios";
 
 export default function Signup() {
@@ -24,7 +23,7 @@ export default function Signup() {
 
   function handleSubmit(e){
     e.preventDefault();
-    axios.post('/signup/submit', formData)
+    axios.post('/signup/submit', {"username" : formData.username, "password" : formData.confirmPassword})
       .then(res => {
         if(res.data === "Successful"){
           window.location.href = '/submitted';
@@ -51,26 +50,25 @@ export default function Signup() {
   return (
     <>
     <NavigationBar/>
-    <div className="d-flex align-items-center justify-content-center" style={{height: '85vh'}}>
-      <Form className="col-xl-4 col-lg-5 col-8 col-md-6 p-5" id="signUpForm"
+    <div className="d-flex justify-content-center mt-5">
+      <Form className="col-xl-4 col-lg-5 col-10 col-md-6 p-4" id="signUpForm"
       style={{backgroundColor: '#eb9347', borderRadius: '25px'}}>
-        <h1 className="text-center text-decoration-underline mb-4">Sign Up</h1>
-        <Brand/>
+        <h1 className="text-center display-1 fw-bold">Sign Up</h1>
         <Form.Group className="my-3" controlId="formBasicUsername">
-          <Form.Label className="fs-3">Username</Form.Label>
+          <Form.Label className="fs-5">Username</Form.Label>
           <Form.Control name="username" type="text" placeholder="Username" 
           value={formData.username} onChange={handleChange}/>
           <p style={{display: 'none', color: 'red', fontWeight: 'bold'}} id="username-contents">Contains less than 30 alphanumeric characters, underscores(-) and periods(.)</p>
           <p style={{display: 'none', color: 'red', fontWeight: 'bold'}} id='username-used'>Username has been used</p>
         </Form.Group>
         <Form.Group className="mb-3" controlId="formBasicPassword">
-          <Form.Label className="fs-3">Password</Form.Label>
+          <Form.Label className="fs-5">Password</Form.Label>
           <Form.Control name="password" type="password" placeholder="Password" 
           value={formData.password} onChange={handleChange}/>
           <p style={{display: 'none', color: 'red', fontWeight: 'bold'}} id="password-max-length">Password cannot be more than 100 characters</p>
         </Form.Group>
         <Form.Group className="mb-3" controlId="formBasicConfirmPassword">
-          <Form.Label className="fs-3">Confirm password</Form.Label>
+          <Form.Label className="fs-5">Confirm password</Form.Label>
           <Form.Control name="confirmPassword" type="password" placeholder="Confirm password" 
           value={formData.confirmPassword} onChange={handleChange}/>
           <p style={{display: 'none', color: 'red', fontWeight: 'bold'}} id="password-different">Password is different from Confirm Password</p>
