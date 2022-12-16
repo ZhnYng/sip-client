@@ -1,5 +1,5 @@
 import React from "react";
-import Nav from "../components/Nav";
+import Nav from "../components/Home/HomeNav";
 import Goal from "../components/Home/Goal";
 import Header from "../components/Home/Header";
 import Statistics from "../components/Home/Statistics";
@@ -9,27 +9,16 @@ import axios from "axios";
 
 export default function Home(){
 
-  const [user, setUser] = React.useState("");
-  const [userInfo, setUserInfo] = React.useState();
-  const [update, setUpdate] = React.useState(false);
-
-  // Function to handle user info
-  function handleUserInfo(userData){
-    let goals = [], drinksToday = [];
-    for(const data of userData){
-      goals = [...goals, {goal: data.goal, date: data.date}];
-      drinksToday = [...drinksToday, {drankToday: data.drank_today, date: data.date}];
-    }
-    return {goals: goals, drinksToday: drinksToday};
-  }
+  const [username, setUsername] = React.useState("NA");
+  const [userId, setUserId] = React.useState()
 
   React.useEffect(() => {
     const loggedInUser = localStorage.getItem("userId");
     if (loggedInUser) {
-      setUser(() => {return loggedInUser})
-      axios.get('/', { params: { userId: loggedInUser } })
+      setUserId(loggedInUser);
+      axios.get('/home/username', { params: { userId: loggedInUser } })
         .then(res => {
-          setUserInfo(handleUserInfo(res.data))
+          setUsername(res.data[0].username);
         })
         .catch(err => {
           console.log(err);
@@ -43,19 +32,19 @@ export default function Home(){
     <>
     <Nav/>
     <div className="d-flex justify-content-center">
-      <Header user={user}/>
+      <Header user={username}/>
     </div>
-    <div className="container-fluid row justify-content-center m-0 align-items-center my-5">
+    <div className="container-fluid row justify-content-center m-0 align-items-center my-3">
       <div className="col-12 col-lg-5 d-flex flex-column align-items-center">
-        {userInfo && <Goal user={user} userInfo={userInfo.goals}/>}
-        {userInfo && <Statistics user={user} userInfo={userInfo.drinksToday} update={update}/>}
+        {/* {userInfo && <Goal userId={userId}/>} */}
+        {/* {userInfo && <Statistics user={userId} userInfo={userInfo.drinksToday} update={update}/>} */}
       </div>
-      <div className="col-12 col-lg-3">
-        {userInfo && <Calendar user={user} userInfo={userInfo.drinksToday}/>}
+      {/* <div className="col-12 col-lg-3 my-3">
+        {userInfo && <Calendar user={userId} userInfo={userInfo.drinksToday}/>}
       </div>
-      <div className="col-12 col-lg-3">
-        <Update user={user} update={setUpdate}/>
-      </div>
+      <div className="col-12 col-lg-3 my-3">
+        <Update user={userId} update={setUpdate}/>
+      </div> */}
     </div>
     </>
   )

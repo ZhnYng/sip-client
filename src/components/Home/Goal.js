@@ -8,15 +8,15 @@ export default function Goal(props){
   const [currentGoal, setCurrentGoal] = React.useState(null);
 
   React.useEffect(() => {
-    const userInfo = props.userInfo;
-    for(var i = 1; i <= userInfo.length; i++){
-      var wroteLatest = userInfo[userInfo.length-i];
-      if(wroteLatest.goal){
-        setCurrentGoal(wroteLatest.goal);
-        break;
-      }
-    }
-  }, [props.userInfo])
+    const userId = props.userId;
+    axios.get('/home/goal', {params:{userId: userId}})
+      .then(res => {
+        setUsername(res.data[0].goal);
+      })
+      .catch(err => {
+        console.log(err);
+      })
+  }, [])
 
   function handleChange(event){
     setGoal(event.target.value)
@@ -52,7 +52,7 @@ export default function Goal(props){
   }
   
   return(
-    <div className="col-12 shadow rounded px-5 py-3">
+    <div className="col-12 shadow rounded py-3">
       <Form.Group className="my-3 text-center" controlId="goal">
         <Form.Label onClick={() => {if(currentGoal) return setCurrentGoal(null); else window.history.go(0);}} 
         className="fs-3 text-center">Want to set or change your goal?</Form.Label>

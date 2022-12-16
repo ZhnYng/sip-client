@@ -57,7 +57,7 @@ export default function Statistics(props){
   }, [props.update])
 
   return (
-    <div className="col-11 shadow rounded px-5 py-4 mt-4">
+    <div className="col-12 shadow rounded px-4 py-4 mt-4">
       <canvas id="myChart" style={{width: '100%', minWidth:'50px'}}></canvas>
     </div>
   )
