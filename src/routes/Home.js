@@ -10,13 +10,11 @@ import axios from "axios";
 export default function Home(){
 
   const [username, setUsername] = React.useState("NA");
-  const [userId, setUserId] = React.useState()
+  const userId = localStorage.getItem("userId");
 
   React.useEffect(() => {
-    const loggedInUser = localStorage.getItem("userId");
-    if (loggedInUser) {
-      setUserId(loggedInUser);
-      axios.get('/home/username', { params: { userId: loggedInUser } })
+    if (userId) {
+      axios.get('/home/username', { params: { userId: userId } })
         .then(res => {
           setUsername(res.data[0].username);
         })
@@ -36,7 +34,7 @@ export default function Home(){
     </div>
     <div className="container-fluid row justify-content-center m-0 align-items-center my-3">
       <div className="col-12 col-lg-5 d-flex flex-column align-items-center">
-        {/* {userInfo && <Goal userId={userId}/>} */}
+        <Goal userId={userId}/>
         {/* {userInfo && <Statistics user={userId} userInfo={userInfo.drinksToday} update={update}/>} */}
       </div>
       {/* <div className="col-12 col-lg-3 my-3">
