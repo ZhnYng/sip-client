@@ -34,15 +34,16 @@ export default function Home(){
     </div>
     <div className="container-fluid row justify-content-center m-0 align-items-center my-3">
       <div className="col-12 col-lg-5 d-flex flex-column align-items-center">
-        <Goal userId={userId}/>
-        {/* {userInfo && <Statistics user={userId} userInfo={userInfo.drinksToday} update={update}/>} */}
-      </div>
-      {/* <div className="col-12 col-lg-3 my-3">
-        {userInfo && <Calendar user={userId} userInfo={userInfo.drinksToday}/>}
+        <Goal/>
+        <Statistics/>
       </div>
       <div className="col-12 col-lg-3 my-3">
-        <Update user={userId} update={setUpdate}/>
-      </div> */}
+        <Calendar/>
+      </div>
+      <div className="col-12 col-lg-3 my-3">
+        {/* <Update user={userId} update={setUpdate}/> */}
+        <Update/>
+      </div>
     </div>
     </>
   )

@@ -3,7 +3,7 @@ import React from 'react';
 import axios from "axios";
 import './submitButton.css'
 
-export default function Update(props){
+export default function Update(){
 
   const [updateSuccessful, setUpdateSuccessful] = React.useState(2);
     
