@@ -41,7 +41,6 @@ export default function Home(){
         <Calendar/>
       </div>
       <div className="col-12 col-lg-3 my-3">
-        {/* <Update user={userId} update={setUpdate}/> */}
         <Update/>
       </div>
     </div>

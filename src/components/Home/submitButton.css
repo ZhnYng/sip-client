@@ -1,4 +1,4 @@
-#defaultAnimation > #submitButton{
+/* #defaultAnimation > #submitButton{
     transition: width 1s, height 1s;
     transition-delay: 0.2s;
 }
@@ -7,17 +7,37 @@
     width: 1px;
     height: 1px;
 }
-#submitButtonCross{
+/* #submitButtonCross{
+    visibility: hidden;
     width: 1px;
     height: 1px;
     transition: width 1s height 1s;
+} */ 
+@keyframes growAnimation {
+    0% {width: 1px; height: 1px;}
+    50% {width: 25px; height: 25px;}
+    100% {width: 1px; height: 1px;}
+}
+@keyframes buttonPressAnimation {
+    0% {margin-top: 0px;}
+    100% {margin-top: 10px;}
 }
 
-#successAnimation > #submitButton{
-    width: 66%;
-    transition: width 1s;
+#submitButtonTick{
+    animation-name: growAnimation;
+    animation-duration: 4s;
 }
-#successAnimation > #submitButtonTick{
+
+#submitButtonCross{
+    animation-name: growAnimation;
+    animation-duration: 4s;
+}
+
+#updated{
+    animation-name: buttonPressAnimation;
+    animation-duration: 3s;
+}
+/* #successAnimation > #submitButtonTick{
     color: #198754;
     width: 70px;
     height: 70px;
@@ -26,15 +46,15 @@
 }
 
 #failedAnimation > #submitButton{
-    width: 66%;
+    width: 100%;
     background-color: #FF5252;
     border: solid 1px #FF5252;
     transition: width 1s;
-}
-#failedAnimation > #submitButtonCross{
+} */
+/* #failedAnimation > #submitButtonCross{
     color: #FF5252;
     width: 70px;
     height: 70px;
     transition: width 1s, height 1s;
     transition-delay: 0.2s;
-}
+} */

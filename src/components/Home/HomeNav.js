@@ -26,8 +26,8 @@ export default function NavigationBar(){
                     <Nav.Link href="/signup" className='mx-4'>
                         Sign Up
                     </Nav.Link>
-                    <Nav.Link href="/changeGoal" className='mx-4'>
-                        Change goal
+                    <Nav.Link href="/settings" className='mx-4'>
+                        Settings
                     </Nav.Link>
                 </Nav>
             </Navbar.Collapse>

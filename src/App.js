@@ -11,7 +11,7 @@ import Login from './routes/Login'
 import Signup from './routes/Signup'
 import Submitted from './routes/Submitted';
 import Home from './routes/Home';
-import ChangeGoal from './routes/ChangeGoal';
+import Settings from './routes/Settings';
 
 
 export default function App(){
@@ -25,7 +25,7 @@ export default function App(){
           <Route path="login" element={<Login/>}/>
           <Route path="signup" element={<Signup/>}/>
           <Route path="submitted" element={<Submitted/>}/>
-          <Route path="changeGoal" element={<ChangeGoal/>}/>
+          <Route path="settings" element={<Settings/>}/>
         </Routes>
       </BrowserRouter>
     </>
