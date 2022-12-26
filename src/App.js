@@ -12,6 +12,7 @@ import Signup from './routes/Signup'
 import Submitted from './routes/Submitted';
 import Home from './routes/Home';
 import Settings from './routes/Settings';
+import Rewards from './routes/Rewards';
 
 
 export default function App(){
@@ -26,6 +27,7 @@ export default function App(){
           <Route path="signup" element={<Signup/>}/>
           <Route path="submitted" element={<Submitted/>}/>
           <Route path="settings" element={<Settings/>}/>
+          <Route path="rewards" element={<Rewards/>}/>
         </Routes>
       </BrowserRouter>
     </>

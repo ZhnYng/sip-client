@@ -20,11 +20,8 @@ export default function NavigationBar(){
                     <Nav.Link href="/statistics" className='mx-4'>
                         Statistics
                     </Nav.Link>
-                    <Nav.Link href="/login" className='mx-4'>
-                        Log In
-                    </Nav.Link>
-                    <Nav.Link href="/signup" className='mx-4'>
-                        Sign Up
+                    <Nav.Link href="/rewards" className='mx-4'>
+                        Rewards
                     </Nav.Link>
                     <Nav.Link href="/settings" className='mx-4'>
                         Settings
