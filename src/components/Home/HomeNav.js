@@ -17,14 +17,14 @@ export default function NavigationBar(){
                     <Nav.Link href="/home" className='mx-4'>
                         Home
                     </Nav.Link>
-                    <Nav.Link href="/statistics" className='mx-4'>
-                        Statistics
-                    </Nav.Link>
                     <Nav.Link href="/rewards" className='mx-4'>
                         Rewards
                     </Nav.Link>
                     <Nav.Link href="/settings" className='mx-4'>
                         Settings
+                    </Nav.Link>
+                    <Nav.Link href="/logout" onClick={()=>localStorage.clear()} className='mx-4'>
+                        Log Out
                     </Nav.Link>
                 </Nav>
             </Navbar.Collapse>

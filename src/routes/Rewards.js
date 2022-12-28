@@ -105,7 +105,7 @@ export default function Rewards(){
             </div>
           </div>
           <div className="rounded p-3 pb-0 col-11" style={{backgroundColor: "#3e9c35"}}>
-            <h2 className="display-3 px-5 text-center text-white">Vouchers 🤑🤑</h2>
+            <h2 className="display-3 px-5 text-center text-white">Vouchers</h2>
             <hr/>
             <div className="row justify-content-around my-4">
               <Card className="col-5">
@@ -117,86 +117,6 @@ export default function Rewards(){
               </Card>
               <Card className="col-5">
                 <Card.Img variant="top" src={sevenElevenLogo}/>
-                <Card.Body className="px-0 pt-0">
-                  <Card.Title className="col-12 text-center">$5 voucher</Card.Title>
-                  <Button variant="success" className="col-12">Apply</Button>
-                </Card.Body>
-              </Card>
-            </div>
-            <div className="row justify-content-around my-4">
-              <Card className="col-5">
-                <Card.Img variant="top" src={sevenElevenLogo}/>
-                <Card.Body className="px-0 pt-0">
-                  <Card.Title className="col-12 text-center">$5 voucher</Card.Title>
-                  <Button variant="success" className="col-12">Apply</Button>
-                </Card.Body>
-              </Card>
-              <Card className="col-5">
-                <Card.Img variant="top" src={fpLogo}/>
-                <Card.Body className="px-0 pt-0">
-                  <Card.Title className="col-12 text-center">$5 voucher</Card.Title>
-                  <Button variant="success" className="col-12">Apply</Button>
-                </Card.Body>
-              </Card>
-            </div>
-            <div className="row justify-content-around my-4">
-              <Card className="col-5">
-                <Card.Img variant="top" src={fpLogo}/>
-                <Card.Body className="px-0 pt-0">
-                  <Card.Title className="col-12 text-center">$5 voucher</Card.Title>
-                  <Button variant="success" className="col-12">Apply</Button>
-                </Card.Body>
-              </Card>
-              <Card className="col-5">
-                <Card.Img variant="top" src={sevenElevenLogo}/>
-                <Card.Body className="px-0 pt-0">
-                  <Card.Title className="col-12 text-center">$5 voucher</Card.Title>
-                  <Button variant="success" className="col-12">Apply</Button>
-                </Card.Body>
-              </Card>
-            </div>
-            <div className="row justify-content-around my-4">
-              <Card className="col-5">
-                <Card.Img variant="top" src={sevenElevenLogo}/>
-                <Card.Body className="px-0 pt-0">
-                  <Card.Title className="col-12 text-center">$5 voucher</Card.Title>
-                  <Button variant="success" className="col-12">Apply</Button>
-                </Card.Body>
-              </Card>
-              <Card className="col-5">
-                <Card.Img variant="top" src={fpLogo}/>
-                <Card.Body className="px-0 pt-0">
-                  <Card.Title className="col-12 text-center">$5 voucher</Card.Title>
-                  <Button variant="success" className="col-12">Apply</Button>
-                </Card.Body>
-              </Card>
-            </div>
-            <div className="row justify-content-around my-4">
-              <Card className="col-5">
-                <Card.Img variant="top" src={fpLogo}/>
-                <Card.Body className="px-0 pt-0">
-                  <Card.Title className="col-12 text-center">$5 voucher</Card.Title>
-                  <Button variant="success" className="col-12">Apply</Button>
-                </Card.Body>
-              </Card>
-              <Card className="col-5">
-                <Card.Img variant="top" src={sevenElevenLogo}/>
-                <Card.Body className="px-0 pt-0">
-                  <Card.Title className="col-12 text-center">$5 voucher</Card.Title>
-                  <Button variant="success" className="col-12">Apply</Button>
-                </Card.Body>
-              </Card>
-            </div>
-            <div className="row justify-content-around my-4">
-              <Card className="col-5">
-                <Card.Img variant="top" src={sevenElevenLogo}/>
-                <Card.Body className="px-0 pt-0">
-                  <Card.Title className="col-12 text-center">$5 voucher</Card.Title>
-                  <Button variant="success" className="col-12">Apply</Button>
-                </Card.Body>
-              </Card>
-              <Card className="col-5">
-                <Card.Img variant="top" src={fpLogo}/>
                 <Card.Body className="px-0 pt-0">
                   <Card.Title className="col-12 text-center">$5 voucher</Card.Title>
                   <Button variant="success" className="col-12">Apply</Button>
