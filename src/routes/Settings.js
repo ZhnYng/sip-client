@@ -3,12 +3,13 @@ import FormLabel from "react-bootstrap/esm/FormLabel";
 import Form from 'react-bootstrap/Form';
 import Nav from "../components/Home/HomeNav";
 import axios from "axios";
+import LocationAlert from '../locations/LocationAlerts';
 
 export default function Settings(){
   const [formData, setFormData] = React.useState({
     goal: 0,
     reminder: false
-  })
+  });
 
   React.useEffect(() => {
     axios.get('/home/goal', {params:{userId: localStorage.getItem('userId')}})
@@ -25,18 +26,18 @@ export default function Settings(){
       })
 
     axios.get('/settings/getReminderStatus', {params:{userId: localStorage.getItem('userId')}})
-    .then(res => {
-      res.data[0].reminder === 1 ? document.getElementById("reminder").checked = true : document.getElementById("reminder").checked = false
-      setFormData(prevFormData => {
-        return ({
-          ...prevFormData,
-          reminder: res.data[0].reminder === 1 ? true : false
+      .then(res => {
+        res.data[0].reminder === 1 ? document.getElementById("reminder").checked = true : document.getElementById("reminder").checked = false
+        setFormData(prevFormData => {
+          return ({
+            ...prevFormData,
+            reminder: res.data[0].reminder === 1 ? true : false
+          })
         })
       })
-    })
-    .catch(err => {
-      console.log(err);
-    })
+      .catch(err => {
+        console.log(err);
+      })
   }, [])
 
   function handleChange(event){
@@ -51,21 +52,22 @@ export default function Settings(){
 
   function handleSubmit(){
     axios.put('/settings/updateGoal', {goal:formData.goal}, {params:{userId: localStorage.getItem('userId')}})
-    .then(res => {
-      console.log(res.data);
-    })
-    .catch(err => console.log(err));
+      .then(res => {
+        console.log(res.data);
+      })
+      .catch(err => console.log(err));
 
     axios.put('/settings/updateReminderStatus', {reminder: formData.reminder}, {params:{userId: localStorage.getItem('userId')}})
-    .then(res => {
-      console.log(res.data);
-    })
-    .catch(err => console.log(err));
+      .then(res => {
+        console.log(res.data);
+      })
+      .catch(err => console.log(err));
   }
 
   return(
     <div className="container-fluid">
       <Nav/>
+      <LocationAlert/>
       <div className="d-flex flex-column align-items-center">
         <h1 className="display-4 text-center"><u>Settings</u></h1>
         <div className="col-12 container-fluid">

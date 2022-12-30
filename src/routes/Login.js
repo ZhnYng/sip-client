@@ -5,7 +5,7 @@ import Form from 'react-bootstrap/Form';
 import axios from "axios";
 
 export default function Login() {
-  const TEST_VALUE = ""
+  const TEST_VALUE = "test"
   const [formData, setFormData] = React.useState({
     username: TEST_VALUE,
     password: TEST_VALUE
@@ -30,6 +30,7 @@ export default function Login() {
           console.log("password invalid");
         }else{
           localStorage.setItem('userId', res.data.userId)
+          localStorage.setItem("nearBbt", 0);
           window.location.href = '/home';
         }
       })

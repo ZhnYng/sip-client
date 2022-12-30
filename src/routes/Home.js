@@ -6,6 +6,7 @@ import Statistics from "../components/Home/Statistics";
 import Calendar from "../components/Home/Calendar";
 import Update from "../components/Home/Update";
 import axios from "axios";
+import LocationAlert from "../locations/LocationAlerts";
 
 export default function Home(){
 
@@ -29,6 +30,9 @@ export default function Home(){
   return(
     <>
     <Nav/>
+    <div className="container-fluid">
+      <LocationAlert/>
+    </div>
     <div className="d-flex justify-content-center">
       <Header user={username}/>
     </div>

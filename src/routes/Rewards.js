@@ -4,6 +4,7 @@ import ProgressBar from 'react-bootstrap/ProgressBar';
 import fpLogo from '../img/FairPrice.png';
 import sevenElevenLogo from '../img/7-11.png';
 import Button from 'react-bootstrap/Button';
+import LocationAlert from "../locations/LocationAlerts";
 import Card from 'react-bootstrap/Card';
 
 
@@ -14,6 +15,9 @@ export default function Rewards(){
   return (
       <div>
         <Nav/>
+        <div className="container-fluid">
+          <LocationAlert/>
+        </div>
         <div className="d-flex flex-column align-items-center mb-5 container-fluid">
           <div 
             className="d-flex flex-column col-11 rounded shadow p-4" 
@@ -36,7 +40,7 @@ export default function Rewards(){
           </div>
           <div className="col-11 shadow rounded py-3 my-3 d-flex justify-content-center" >
             <div className="row align-items-center col-12 container-fluid">
-              <img src={fpLogo} className="rounded col-3 p-0"/>
+              <img src={fpLogo} alt="Fairprice logo" className="rounded col-3 p-0"/>
               <div className="col-9 d-flex flex-column">
                 <p className="col-12 fs-5">$5 FairPrice voucher</p>
                 <div className="row justify-content-end align-items-center">
@@ -50,7 +54,7 @@ export default function Rewards(){
           </div>
           <div className="col-11 shadow rounded py-3 my-3 d-flex justify-content-center" >
             <div className="row align-items-center col-12 container-fluid">
-              <img src={sevenElevenLogo} className="rounded col-3 p-0"/>
+              <img src={sevenElevenLogo} alt="7-11 logo" className="rounded col-3 p-0"/>
               <div className="col-9 d-flex flex-column">
                 <p className="col-12 fs-5">$10 7-eleven voucher</p>
                 <div className="row justify-content-end align-items-center">
@@ -64,7 +68,7 @@ export default function Rewards(){
           </div>
           <div className="col-11 shadow rounded py-3 my-3 d-flex justify-content-center" >
             <div className="row align-items-center col-12 container-fluid">
-              <img src={fpLogo} className="rounded col-3 p-0"/>
+              <img src={fpLogo} alt="Fairprice logo" className="rounded col-3 p-0"/>
               <div className="col-9 d-flex flex-column">
                 <p className="col-12 fs-5">$5 FairPrice voucher</p>
                 <div className="row justify-content-end align-items-center">
@@ -78,7 +82,7 @@ export default function Rewards(){
           </div>
           <div className="col-11 shadow rounded py-3 my-3 d-flex justify-content-center" >
             <div className="row align-items-center col-12 container-fluid">
-              <img src={fpLogo} className="rounded col-3 p-0"/>
+              <img src={fpLogo} alt="Fairprice logo" className="rounded col-3 p-0"/>
               <div className="col-9 d-flex flex-column">
                 <p className="col-12 fs-5">$5 FairPrice voucher</p>
                 <div className="row justify-content-end align-items-center">
@@ -92,7 +96,7 @@ export default function Rewards(){
           </div>
           <div className="col-11 shadow rounded py-3 my-3 d-flex justify-content-center" >
             <div className="row align-items-center col-12 container-fluid">
-              <img src={fpLogo} className="rounded col-3 p-0"/>
+              <img src={fpLogo} alt="Fairprice logo" className="rounded col-3 p-0"/>
               <div className="col-9 d-flex flex-column">
                 <p className="col-12 fs-5">$10 FairPrice voucher</p>
                 <div className="row justify-content-end align-items-center">
