@@ -25,11 +25,10 @@ export default function Signup() {
     e.preventDefault();
     axios.post('/signup/submit', {"username" : formData.username, "password" : formData.confirmPassword})
       .then(res => {
-        if(res.data === "Successful"){
+        if(res.data.success_msg ==="user added successfully"){
           window.location.href = '/submitted';
         }else{
-          let validation = res.data;
-          validator(validation)
+          console.log("Fill in all values");
         }
       })
       .catch(err => console.log(err))

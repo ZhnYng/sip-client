@@ -2,12 +2,35 @@ import axios from "axios";
 import React from "react";
 
 export default function Calendar(){
-  const [days, setDays] = React.useState(':/');
+  const [days, setDays] = React.useState(0);
   
   React.useEffect(() => {
     axios.get('/home/daysFromLastDrank', {params:{userId: localStorage.getItem('userId')}})
     .then(res => {
-      setDays(res.data[0].days);
+      if(res.data[0].days){
+        setDays(res.data[0].days);
+        const numOfDays = res.data[0].days;
+        axios.get('/rewards/points', {params: {userId: localStorage.getItem('userId')}})
+          .then(res => {
+            let points
+            if(res.data) {
+              points = res.data[0].points;
+            }else{
+              points = 0;
+            }
+            console.log(points)
+            axios.post('/rewards/addPoints', {userId: localStorage.getItem('userId'), points: points+(numOfDays*10)})
+              .then(res => {
+                console.log(res);
+              })
+              .catch(err => {
+                console.log(err);
+              })
+          })
+          .catch(err => {
+            console.log(err);
+          })
+      }
     })
     .catch(err => {
       console.error(err);

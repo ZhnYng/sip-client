@@ -5,7 +5,7 @@ import Form from 'react-bootstrap/Form';
 import axios from "axios";
 
 export default function Login() {
-  const TEST_VALUE = "test"
+  const TEST_VALUE = ""
   const [formData, setFormData] = React.useState({
     username: TEST_VALUE,
     password: TEST_VALUE
@@ -24,9 +24,9 @@ export default function Login() {
     e.preventDefault();
     axios.post('/login/submit', formData)
       .then(res => {
-        if(Object.keys(res.data) === "error msg"){
+        if(Object.keys(res.data)[0] === "error msg"){
           console.log("Login failed");
-        }else if(Object.values(res.data) === "password invalid"){
+        }else if(Object.values(res.data)[0] === "password invalid"){
           console.log("password invalid");
         }else{
           localStorage.setItem('userId', res.data.userId)
@@ -53,11 +53,6 @@ export default function Login() {
           <Form.Label className="fs-3">Password</Form.Label>
           <Form.Control name="password" type="password" placeholder="Password" 
           value={formData.password} onChange={handleChange}/>
-          <a href="/too-bad" className="text-decoration-none">
-            <Form.Text className="text-dark">
-              Forgot password?
-            </Form.Text>
-          </a>
         </Form.Group>
         <Button variant="primary" id="button" type="submit" onClick={handleSubmit}>
           Done
