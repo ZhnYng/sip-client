@@ -20,11 +20,11 @@ export default function App(){
     <>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Landing/>}/>
+          <Route path="/" element={<Home/>}/>
           <Route path="home" element={<Home/>}/>
-          <Route path="logout" element={<Login/>}/>
-          <Route path="login" element={<Login/>}/>
-          <Route path="signup" element={<Signup/>}/>
+          <Route path="login" element={<Home/>}/>
+          <Route path="signup" element={<Home/>}/>
+          <Route path="logout" element={<Home/>}/>
           <Route path="submitted" element={<Submitted/>}/>
           <Route path="settings" element={<Settings/>}/>
           <Route path="rewards" element={<Rewards/>}/>

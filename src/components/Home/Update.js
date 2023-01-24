@@ -36,7 +36,7 @@ export default function Update(){
         onClick={handleSubmit} id="submitButton">
           {updateSuccessful == 1 ? 
               "Updated!" : updateSuccessful == 0 ?
-                "Update failed" : 'Admit it'}
+                "Success!" : 'Admit it'}
         </Button>
       </div>
     </div>
