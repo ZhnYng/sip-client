@@ -4,7 +4,7 @@ import Form from 'react-bootstrap/Form';
 
 export default function Goal(){
 
-  const [goal, setGoal] = React.useState('5');
+  const [goal, setGoal] = React.useState('');
 
   React.useEffect(() => {
     axios.get('/home/goal', {params:{userId: localStorage.getItem('userId')}})

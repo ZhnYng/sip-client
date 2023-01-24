@@ -10,22 +10,22 @@ import LocationAlert from "../locations/LocationAlerts";
 
 export default function Home(){
 
-  const [username, setUsername] = React.useState("test");
+  const [username, setUsername] = React.useState("NA");
   const userId = localStorage.getItem("userId");
 
-  // React.useEffect(() => {
-  //   if (userId) {
-  //     axios.get('/home/username', { params: { userId: userId } })
-  //       .then(res => {
-  //         setUsername(res.data[0].username);
-  //       })
-  //       .catch(err => {
-  //         console.log(err);
-  //       })
-  //   }else{
-  //      window.location.href = '/login';
-  //   }
-  // }, [])
+  React.useEffect(() => {
+    if (userId) {
+      axios.get('/home/username', { params: { userId: userId } })
+        .then(res => {
+          setUsername(res.data[0].username);
+        })
+        .catch(err => {
+          console.log(err);
+        })
+    }else{
+      window.location.href = '/login';
+    }
+  }, [])
 
   return(
     <>

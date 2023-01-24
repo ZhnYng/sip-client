@@ -2,7 +2,7 @@ import axios from "axios";
 import React from "react";
 
 export default function Calendar(){
-  const [days, setDays] = React.useState(2);
+  const [days, setDays] = React.useState(0);
   
   React.useEffect(() => {
     axios.get('/home/daysFromLastDrank', {params:{userId: localStorage.getItem('userId')}})
